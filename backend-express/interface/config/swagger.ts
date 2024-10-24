@@ -17,9 +17,12 @@ const swaggerOptions = {
         },
         servers: [
             {
-                url: 'http://localhost:3000',
-            },
-        ],
+              url: process.env.NODE_ENV === 'production' 
+                ? 'https://hexa-backend-deploy.vercel.app'  // URL de producción
+                : 'http://localhost:3000',                 // URL local
+              description: process.env.NODE_ENV === 'production' ? 'Servidor de producción' : 'Servidor local'
+            }
+          ],
         components: {
             securitySchemes: {
                 bearerAuth: {

@@ -1,0 +1,5 @@
+node_modules
+# compiled ts
+**.js
+**.js.map
+!jest.config.js

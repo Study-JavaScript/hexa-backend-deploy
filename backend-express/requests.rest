@@ -1,0 +1,134 @@
+### Create un nuevo usuario ✅
+POST http://localhost:3000/signup 
+Content-Type: application/json
+
+{
+    "name": "Usuario de Prueba",
+    "email": "usuario2@prueba.com",
+    "password": "usuarioprueba2"
+}
+
+###
+
+### Read todos los usuarios ❌ 
+GET http://localhost:3000/admins/users
+Accept: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6Miwicm9sZSI6IlVTRVIiLCJpYXQiOjE3MjcyNTcyODMsImV4cCI6MTcyNzI2MDg4M30.naTrpc_uyenmI25PLttTJ9H-Q4Yy7bn0xZJXT1zlVVY
+
+###
+
+### Read un usuario por ID ✅
+GET http://localhost:3000/users/id?q=2
+Accept: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6Miwicm9sZSI6IlVTRVIiLCJpYXQiOjE3MjcyNTcyODMsImV4cCI6MTcyNzI2MDg4M30.naTrpc_uyenmI25PLttTJ9H-Q4Yy7bn0xZJXT1zlVVY
+
+###
+
+### Read un usuario por ID ✅
+GET http://localhost:3000/users/email?q=firstAdmin@prisma.io
+Accept: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6Miwicm9sZSI6IlVTRVIiLCJpYXQiOjE3MjcyNTcyODMsImV4cCI6MTcyNzI2MDg4M30.naTrpc_uyenmI25PLttTJ9H-Q4Yy7bn0xZJXT1zlVVY
+
+### 
+
+### Update un usuario ✅
+PUT http://localhost:3000/users/2
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6Miwicm9sZSI6IlVTRVIiLCJpYXQiOjE3MjcyNTcyODMsImV4cCI6MTcyNzI2MDg4M30.naTrpc_uyenmI25PLttTJ9H-Q4Yy7bn0xZJXT1zlVVY
+Accept: application/json
+
+{
+  "name": "Usuario de prueba 2a"
+}
+
+
+###
+
+### Login un usuario admin ✅
+
+POST http://localhost:3000/login
+Content-Type: application/json
+
+{
+    "email": "firstAdmin@prisma.io",
+    "password": "firstAdmin"
+}
+
+###
+
+### Login un usuario ✅
+
+POST http://hexa-ts.vercel.app/login
+Content-Type: application/json
+
+{
+    "email": "usuario2@prueba.com",
+    "password": "usuarioprueba2"
+}
+
+###
+
+### Create Post de un usuario ✅
+
+POST http://localhost:3000/posts
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6Miwicm9sZSI6IlVTRVIiLCJpYXQiOjE3MjcwNzg3MTIsImV4cCI6MTcyNzA4MjMxMn0.M60RJETRpTme3wg6akqVBZN1J37W6nRmblVoTQjIJOw
+Content-Type: application/json
+
+{
+    "title": "Título del Post de Prueba",
+    "content": "Este es el contenido del post de prueba del User2.",
+    "authorId": 2
+}
+
+###
+
+### Create Post de un usuario ❌
+
+POST http://localhost:3000/posts
+Content-Type: application/json
+
+{
+    "title": "Título del Post de Prueba",
+    "content": "Este es el contenido del post de prueba.",
+    "authorId": 3
+}
+
+###
+
+### Read All Posts ✅
+
+GET http://localhost:3000/posts
+Accept: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6NSwiaWF0IjoxNzI3MDI1OTk5LCJleHAiOjE3MjcwMjk1OTl9.KPhRXyrIImE-k-mgj_ZCACJUujLh2wlq5qc5r3dMiCU
+
+###
+
+### Update Post de un usuario
+
+PUT http://localhost:3000/posts/7
+Content-Type: application/json
+Accept: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6NSwiaWF0IjoxNzI3MDI2NzE4LCJleHAiOjE3MjcwMzAzMTh9.Z3pt4niK-sfasHyQ25eOxOVfjSynw8vzZFQOWN61_vk
+
+{
+
+        "title": "Título del Post de Prueba Updated3",
+        "userId": 5
+
+}
+
+###
+
+### Delete Post de un usuario 
+
+DELETE http://localhost:3000/posts/10?type=soft
+Accept: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwicm9sZSI6IkFETUlOIiwiaWF0IjoxNzI3MDc5ODIzLCJleHAiOjE3MjcwODM0MjN9.39lqZOEXJcnZ43BkDGc5VzehS-QwChK_5uktS7pWnZw
+
+###
+
+### Create LikePost de un usuario
+
+POST http://localhost:3000/likepost/8
+Accept: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwicm9sZSI6IkFETUlOIiwiaWF0IjoxNzI3MDg2ODI3LCJleHAiOjE3MjcwOTA0Mjd9.6Chcui95aGHee_W7Gut7dwk1GkPt-8CKZm---4NczEM

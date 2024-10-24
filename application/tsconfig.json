@@ -1,0 +1,19 @@
+{
+    "compilerOptions": {
+      // "baseUrl": ".",
+      "module": "CommonJS",
+      "target": "ES2020",
+      // "rootDir": "../", // ❓ Establece la carpeta raíz, sino la raíz es donde esta tsconfig.json
+      "lib": [ "esnext"],
+      // "lib": ["dom", "esnext"], // ✅⚠️ Biblotecas de tipos que importara ❓
+      // "moduleResolution": "node", // ✅ Resolucion de modulos
+      // "resolveJsonModule": true, // ✅ Permite importar archivos json 
+      "esModuleInterop": true, // ✅ Interoperabilidad entre CommonJS y ES6
+      "skipLibCheck": true, // ❓ Omitir verificación de tipos en .d.ts
+      "strict": true, 
+      "forceConsistentCasingInFileNames": false // ✅ Forzar mayúsculas y minúsculas en nombres de archivo
+    },
+    "include": ["./usecases", "./repositories", "./test", "../domain"],
+    "exclude": ["node_modules"]
+  }
+  

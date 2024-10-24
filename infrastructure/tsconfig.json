@@ -1,0 +1,14 @@
+{
+  "compilerOptions": {
+    "target": "ES2020",
+    "module": "CommonJS",
+    // "rootDir": "../", 
+    "lib": [ "esnext"],
+    "strict": true,
+    "esModuleInterop": true,
+    "skipLibCheck": true,
+    "forceConsistentCasingInFileNames": true
+  },
+  "include": [ "./repositories", "./connectors", "../domain", "../application"],
+  "exclude": ["node_modules"]
+}

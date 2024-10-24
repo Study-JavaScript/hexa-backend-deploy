@@ -1,0 +1,4 @@
+node_modules
+# compile ts
+**.js
+**.js.map

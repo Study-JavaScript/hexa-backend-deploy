@@ -1,0 +1,31 @@
+{
+  "compilerOptions": {
+    "target": "ES2020",
+    "module": "commonjs",
+    "rootDir": "../",
+    "esModuleInterop": true,
+    "strict": true,
+    "skipLibCheck": true,
+    "moduleResolution": "node",
+    "baseUrl": "../",
+    "paths": {
+      "@domain/*": ["domain/*"],
+      "@infrastructure/*": ["infrastructure/*"],
+      "@application/*": ["application/*"]
+    },
+    "forceConsistentCasingInFileNames": true,
+    "resolveJsonModule": true,
+    "sourceMap": true
+  },
+  "include": [
+    ".",
+    "../domain/**/*",
+    "../application/**/*",
+    "../infrastructure/**/*"
+  ],
+  "exclude": [
+  "node_modules",
+  "dist",
+  "../application/test/**/*"
+]
+}

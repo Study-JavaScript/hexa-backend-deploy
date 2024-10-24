@@ -9,7 +9,7 @@
     "prisma:studio": "cd ../infrastructure && npx prisma studio --schema=./prisma/schema.prisma",
     "preinstall": "cd ../infrastructure && npm install",
     
-    
+    "vercel-build": "npm run build",
     "build": "npm run prisma:generate && tsc",
     "start": "node index.js",
     "dev": "ts-node index.ts"

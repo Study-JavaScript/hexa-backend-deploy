@@ -10,7 +10,8 @@
             "../domain/**",
             "../application/**",
             "../utils/**"
-          ]
+          ],
+          "buildCommand": "npm run vercel-build"
         }
       }
     ],

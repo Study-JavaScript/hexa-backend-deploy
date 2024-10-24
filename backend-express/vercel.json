@@ -1,0 +1,19 @@
+{
+    "version": 2,
+    "builds": [
+      {
+        "src": "index.ts",
+        "use": "@vercel/node",
+        "config": {
+          "installCommand": "npm install && cd ../infrastructure && npm install && npx prisma generate --schema=./prisma/schema.prisma",
+          "buildCommand": "cd ../infrastructure && npx prisma generate --schema=./prisma/schema.prisma && cd ../backend-express && npm run build"
+        }
+      }
+    ],
+    "routes": [
+      {
+        "src": "/(.*)",
+        "dest": "index.ts"
+      }
+    ]
+  }
